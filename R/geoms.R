@@ -280,6 +280,19 @@ GeomRidgeline <- ggproto("GeomRidgeline", Geom,
              )
            )
   },
+  
+  make_line_grob2 = function(munched_line, munched_poly, aes) {
+    ggname("geom_ridgeline",
+           grid::polylineGrob(
+             munched_line$x, munched_line$y, id = munched_line$id,
+             default.units = "native",
+             gp = grid::gpar(
+               col = "red",
+               lwd = 2,
+               lty = aes$linetype)
+             )
+           )
+  },                             
 
   make_area_grob = function(munched_poly, aes) {
     ggname("geom_ridgeline",
@@ -288,8 +301,7 @@ GeomRidgeline <- ggproto("GeomRidgeline", Geom,
              default.units = "native",
              gp = grid::gpar(
                fill = ggplot2::alpha(aes$fill, aes$alpha),
-               lty = 2,
-               col = "red")
+               lty = 0)
              )
            )
   }
