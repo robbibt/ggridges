@@ -288,7 +288,8 @@ GeomRidgeline <- ggproto("GeomRidgeline", Geom,
              default.units = "native",
              gp = grid::gpar(
                fill = ggplot2::alpha(aes$fill, aes$alpha),
-               lty = 0)
+               lty = 2,
+               col = "red")
              )
            )
   }
