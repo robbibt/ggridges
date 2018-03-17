@@ -229,10 +229,11 @@ GeomRidgeline <- ggproto("GeomRidgeline", Geom,
 
     # calculate line and area grobs
     line_grob <- self$make_line_grob(munched_line, munched_poly, aes)
+    line_grob2 <- self$make_line_grob2(munched_line, munched_poly, aes)
     area_grob <- self$make_area_grob(munched_poly, aes)
 
     # combine everything and return
-    grid::grobTree(area_grob, stud_grob, point_grob, line_grob)
+    grid::grobTree(area_grob, stud_grob, point_grob, line_grob2, line_grob)
   },
 
 
