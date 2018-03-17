@@ -288,7 +288,7 @@ GeomRidgeline <- ggproto("GeomRidgeline", Geom,
              munched_line$x, munched_line$y, id = munched_line$id,
              default.units = "native",
              gp = grid::gpar(
-               col = "red",
+               col = "white",
                lwd = 2,
                lty = aes$linetype)
              )
